@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    /* border: 1px solid red; */
+}
+
+body {
+    height: auto;
+    width: 100vw;
+    background-image: url("./img/c9c6133dced7392e131f9bd582d7d93c.gif");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    
+} 
+
+h1 {
+    background-color: rgba(0, 0, 0, 0.699);
+    color: whitesmoke;
+    margin: 0.5em 0;
+    width: 100%;
+    padding-left: 3rem;
+}
+
+section {
+    background-color: rgba(0, 0, 0, 0.884);
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    color: whitesmoke;
+    padding: 3rem;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    background-color: rgb(245, 245, 245);
+    position: relative;
+    border-width: 0;
+    box-shadow: 0px 5px 5px rgb(151, 151, 151);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+legend {
+    font-size: 1.25rem;
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+}
+
+.form-input {
+    margin-left: 3rem;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.form-input label {
+    text-align: left;
+    font-size: 0.75rem;
+    width: 75%;
+}
+
+input {
+    border-radius: 3px;
+    border-color: rgba(128, 128, 128, 0.11);
+    background-color: whitesmoke;
+    width: 75%;
+}
+
+input:focus {
+    border: 1px solid rgb(0, 156, 0);
+    box-shadow: 10px 5px 5px rgb(151, 151, 151);
+}
+
+input.valid {
+    border: none;
+    border:2px solid rgb(0, 121, 0);
+}
+
+input.invalid {
+    border: none;
+    border:2px solid rgb(185, 0, 0);
+}
+
+
+#first {
+    margin-top: 3rem;
+}
+
+#password-second {
+    margin-bottom: 2rem;
+}
+
+button {
+    background-color: rgb(175, 103, 20);
+    color: whitesmoke;
+    width: fit-content;
+    margin: 2rem auto;
+    border-radius: 8px;
+    padding: 0.75rem 2.5rem;
+    font-weight: 700;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 136, 0);
+}
+
+p {
+    color: whitesmoke;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.884);
+    color: whitesmoke;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+}
+
+footer a {
+    text-decoration: none; 
+}
+
+a {
+    color: rgb(197, 105, 0);
+}
+
+a:hover {
+    color: rgb(255, 136, 0);
+}
+
+span {
+    color: rgb(197, 13, 0);
+}
+
+@media only screen and (min-width: 680px) {
+    body {
+        gap: 0;
+    }
+
+    .left {
+        flex: 1;
+        flex-direction: row;
+    }
+
+    h1 {
+        height: fit-content;
+        margin-top: 10rem;
+        padding: 1rem;
+        flex: 2;
+        text-align: center;
+    }
+
+    section {
+        flex: 3;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+   
+    .form-row {
+        display: flex;
+        padding: 0 0 0 3rem;
+    }
+
+    
+
+    #fisrt {
+        margin-top: 0;
+    }
+
+    #last {
+        margin-top: 3rem;
+    }
+
+    .form-input {
+        margin: 0;
+        width: 80%;
+    }
+
+    #last,
+    #phone,
+    #password-second {
+       margin-left: -2rem;
+    }
+
+    button {
+        margin: 2rem 0 1rem 3rem;
+        background-color: rgb(184, 101, 6);
+    }
+
+    p {
+        margin: 0 0 3rem 3rem;
+    }
+    
+}

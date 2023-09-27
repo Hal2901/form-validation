@@ -2,14 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <div class="left">
+        <h1>THE COFFEE GROVE</h1>
+        
+        <section>
+            <h2>This is where dreamers and loners come together to share stories or have their ideas heard and feelings touched.
+                <br>
+                Want to be a part of our small coffee talk?
+                <br>
+                <br>
+                Then sign up now!
+            </h2>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Let's do this</legend>
+
+                    <div class="form-row name">
+                        <div class="form-input" id="first">
+                            <label for="first-name">FIRST NAME<span>*</span></label>
+                            <input id="first-name" name="first-name" type="text" required>
+                        </div>
     
+                        <div class="form-input" id="last">
+                            <label for="last-name">LAST NAME<span>*</span></label>
+                            <input id="last-name" name="last-name" type="text" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row contact">
+                        <div class="form-input" id="email">
+                            <label for="user_email">EMAIL<span>*</span></label>
+                            <input id="user_email" name="user_email" type="email" required placeholder="you@example.com">
+                        </div>
     
+                        <div class="form-input" id="phone">
+                            <label for="phone-number">PHONE NUMBER</label>
+                            <input id="phone-number" name="phone-number" type="tel">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row pass">
+                        <div class="form-input" id="password-first">
+                            <label for="password">PASSWORD<span>*</span></label>
+                            <input id="password" name="password" type="password" required>
+                        </div>
+    
+                        <div class="form-input" id="password-second">
+                            <label for="password-confirm">CONFIRM PASSWORD<span>*</span></label>
+                            <input id="password-confirm" name="password-confirm" type="password" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Create Account</button>
+                
+                <p>Already have an account? <a href="#">Log in</a></p>
+            </form>
+        </section>
+    </div>
+
+    <footer>Copyright &copy; 2023 Github <a href="https://github.com/Hal2901">Hal2901</a>. All Rights Reserved</footer>
+
     <script src="./script.js"></script>
 </body>
 </html>
