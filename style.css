@@ -121,6 +121,8 @@ input.invalid {
 span.instruction {
     color: rgb(255, 136, 0);
     font-size: 0.75rem;
+    margin-top: 0.5rem;
+    display: none;
 }
 
 span.instruction > ul {

@@ -4,16 +4,27 @@ const user_password_error = Array.from(divs).find(div => div.id === "password").
 const button = document.querySelector("button");
 
 const nameRegExp = /\w{2,}/;
-// const phoneRegExp = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+const phoneRegExp = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
 const emailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const passRegExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
 let pass;
 let pass_confirm;
 
+// const passRegExp_1Number = /^(?=.*[0-9])$/;
+// const passRegExp_1Symbol = /^(?=.*[!@#$%^&*])$/;
+// const passRegExp_1Uppercase = /^(?=.*[A-Z])$/;
+// const passRegExp_8Characters = /^.{8,}$/;
+
+// function showCondition() {
+//     if (!passRegExp_1Number.test(e.value)) {
+
+//     }
+// }
+
 //check if the input is valid according to pattern
-function isValid(e, regExp) {
-    return (regExp.test(e.value)) ? "valid" : "invalid";
+function isValid(input, regExp) {
+    return (regExp.test(input.value)) ? "valid" : "invalid";
 }
 //check if the 2 pass are same
 function isPassSame(pass, pass_confirm) {
@@ -39,8 +50,10 @@ function showError(input, error) {
                 break;
         }
     }
-    else if (input.className === "valid" && input.id === "user-confirm") {
-        user_password_input.className = isValid(user_password_input, passRegExp);
+    else if (input.className === "valid") {
+        if (input.id === "user-confirm") {
+            user_password_input.className = isValid(user_password_input, passRegExp);
+        }
         error.textContent = "";
         return;
     }
@@ -76,17 +89,17 @@ divs.forEach(div => {
     const input = div.querySelector("input");
     const error = div.querySelector("span.error");
 
-    input.addEventListener("input", (e) => {
-        switch (e.target.id) {
+    input.addEventListener("input", () => {
+        switch (input.id) {
             case "last-name":
             case "first-name":
-                input.className = isValid(e.target, nameRegExp);
+                input.className = isValid(input, nameRegExp);
                 showError(input, error);
-                if (e.target.value.length === 0) {input.className = ""};
+                if (input.value.length === 0) {input.className = ""};
                 break;
 
             case "user-email":
-                ifBlank(input, error, e.target.value.length);
+                ifBlank(input, error, input.value.length);
                 break;
             
             // case "phone-number":
@@ -95,39 +108,46 @@ divs.forEach(div => {
             //     break;
 
             case "user-password":
-                pass = e.target.value;
-                ifBlank(input, error, e.target.value.length);
+                pass = input.value;
+                // showCondition(pass);
+                input.className = isValid(input, passRegExp);
+                showError(input, error);
+                ifBlank(input, error, input.value.length);
                 break;
 
             case "user-confirm":
-                pass_confirm = e.target.value;
-                ifBlank(input, error, e.target.value.length);
+                pass_confirm = input.value;
+                ifBlank(input, error, input.value.length);
                 break;
         }
     });
 
-    input.addEventListener("blur", (e) => {
-        switch (e.target.id) {
+    input.addEventListener("blur", () => {
+        switch (input.id) {
             case "user-email":
-                input.className = isValid(e.target, emailRegExp);
+                input.className = isValid(input, emailRegExp);
                 showError(input, error);
-                ifBlank(input, error, e.target.value.length);
+                ifBlank(input, error, input.value.length);
                 break;
 
             case "user-password":
-                input.className = isValid(e.target, passRegExp);
-                showError(input, error);
-                ifBlank(input, error, e.target.value.length);
+                div.querySelector(".instruction").style.display = "none";
+                ifBlank(input, error, input.value.length);
                 break;
 
             case "user-confirm":
                 input.className = isPassSame(pass, pass_confirm);
                 showError(input, error);
-                ifBlank(input, error, e.target.value.length);
+                ifBlank(input, error, input.value.length);
                 break;
         }
     });
 
+    input.addEventListener("focus", () => {
+        if (input.id === "user-password") {
+            div.querySelector(".instruction").style.display = "block";
+        }
+    });
 
 });
 
