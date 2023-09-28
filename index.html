@@ -9,10 +9,10 @@
 <body>
 
     <div class="left">
-        <h1>THE COFFEE GROVE</h1>
+        <h1>THE COFFEE GROVE <img src="./img/coffee_mug_icon.gif"> </h1>
         
         <section>
-            <h2>This is where dreamers and loners come together to share stories or have their ideas heard and feelings touched.
+            <h2>Where dreamers and loners come together to share stories and bring ideas. A place of no judgement, no bias. Just be free to be who you are.
                 <br>
                 Want to be a part of our small coffee talk?
                 <br>
@@ -22,41 +22,55 @@
 
             <form action="#" method="post">
                 <fieldset>
-                    <legend>Let's do this</legend>
+                    <legend>Just need a few info</legend>
 
                     <div class="form-row name">
                         <div class="form-input" id="first">
                             <label for="first-name">FIRST NAME<span>*</span></label>
-                            <input id="first-name" name="first-name" type="text" required>
+                            <input id="first-name" name="first-name" type="text" required placeholder="Freaky">
+                            <span class="error"></span>
                         </div>
     
                         <div class="form-input" id="last">
                             <label for="last-name">LAST NAME<span>*</span></label>
-                            <input id="last-name" name="last-name" type="text" required>
+                            <input id="last-name" name="last-name" type="text" required placeholder="Jane">
+                            <span class="error"></span>
                         </div>
                     </div>
                     
                     <div class="form-row contact">
                         <div class="form-input" id="email">
-                            <label for="user_email">EMAIL<span>*</span></label>
-                            <input id="user_email" name="user_email" type="email" required placeholder="you@example.com">
+                            <label for="user-email">EMAIL<span>*</span></label>
+                            <input id="user-email" name="user-email" type="email" required placeholder="you@example.com">
+                            <span class="error"></span>
                         </div>
     
                         <div class="form-input" id="phone">
                             <label for="phone-number">PHONE NUMBER</label>
-                            <input id="phone-number" name="phone-number" type="tel">
+                            <input id="phone-number" name="phone-number" type="tel" placeholder="XXX-XXX-XXXX">
                         </div>
                     </div>
                     
-                    <div class="form-row pass">
-                        <div class="form-input" id="password-first">
-                            <label for="password">PASSWORD<span>*</span></label>
-                            <input id="password" name="password" type="password" required>
+                    <div class="form-row password">
+                        <div class="form-input" id="password">
+                            <label for="user-password">PASSWORD<span>*</span></label>
+                            <input id="user-password" name="user-password" type="password" required>
+                            <span class="error"></span>
+                            <span class="instruction">
+                                Password must has at least:
+                                <ul>
+                                    <li>An Uppercase Letter (A - Z)</li>
+                                    <li>A number from 0 - 9</li>
+                                    <li>A special symbol (!@#$%^&*)</li>
+                                    <li>Minimum of 8 characters</li>
+                                </ul>
+                            </span>
                         </div>
     
-                        <div class="form-input" id="password-second">
-                            <label for="password-confirm">CONFIRM PASSWORD<span>*</span></label>
-                            <input id="password-confirm" name="password-confirm" type="password" required>
+                        <div class="form-input" id="password-confirm">
+                            <label for="user-confirm">CONFIRM PASSWORD<span>*</span></label>
+                            <input id="user-confirm" name="user-confirm" type="password" required>
+                            <span class="error"></span>
                         </div>
                     </div>
                 </fieldset>
@@ -68,7 +82,14 @@
         </section>
     </div>
 
-    <footer>Copyright &copy; 2023 Github <a href="https://github.com/Hal2901">Hal2901</a>. All Rights Reserved</footer>
+    <footer>
+        <div id="artistPage">
+            Background Art by <a href="https://pixeljeff.tumblr.com/">Pixel Jeff</a>
+        </div>
+        <div id="myPage">
+            Copyright &copy; 2023 Github <a href="https://github.com/Hal2901">Hal2901</a> All rights reserved
+        </div>
+    </footer>
 
     <script src="./script.js"></script>
 </body>

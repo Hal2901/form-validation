@@ -10,13 +10,12 @@
 }
 
 body {
-    height: auto;
-    width: 100vw;
-    background-image: url("./img/c9c6133dced7392e131f9bd582d7d93c.gif");
-    background-size: cover;
+    min-height: 100vh;
+    width: auto;
+    background-image: url("./img/coffee_shop_background.gif");
+    background-size: contain;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1em;
 }
 
@@ -27,11 +26,20 @@ body {
 } 
 
 h1 {
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: rgba(0, 0, 0, 0.884);
     color: whitesmoke;
     margin: 0.5em 0;
     width: 100%;
-    padding-left: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 3.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 section {
@@ -53,10 +61,10 @@ form {
 }
 
 fieldset {
-    background-color: rgb(245, 245, 245);
+    background-color: whitesmoke;
     position: relative;
     border-width: 0;
-    box-shadow: 0px 5px 5px rgb(151, 151, 151);
+    box-shadow: 0px 5px 5px whitesmoke;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -67,6 +75,10 @@ legend {
     position: absolute;
     top: 1rem;
     left: 3rem;
+}
+
+span {
+    color: rgb(197, 13, 0);
 }
 
 .form-input {
@@ -91,7 +103,8 @@ input {
 }
 
 input:focus {
-    border: 1px solid rgb(0, 156, 0);
+    outline: 0;
+    border: 2px solid rgb(224, 120, 0);
     box-shadow: 10px 5px 5px rgb(151, 151, 151);
 }
 
@@ -105,6 +118,25 @@ input.invalid {
     border:2px solid rgb(185, 0, 0);
 }
 
+span.instruction {
+    color: rgb(255, 136, 0);
+    font-size: 0.75rem;
+}
+
+span.instruction > ul {
+    padding-left: 1rem;
+}
+
+input.invalid + span.error {
+    text-align: center;
+    font-size: 0.75rem;
+    width: 75%;
+    margin-top: -2px;
+    background-color: rgb(185, 0, 0);
+    color: whitesmoke;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
 
 #first {
     margin-top: 3rem;
@@ -136,6 +168,8 @@ p {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.884);
     color: whitesmoke;
     width: 100%;
@@ -149,6 +183,8 @@ footer a {
     text-decoration: none; 
 }
 
+
+
 a {
     color: rgb(197, 105, 0);
 }
@@ -157,13 +193,12 @@ a:hover {
     color: rgb(255, 136, 0);
 }
 
-span {
-    color: rgb(197, 13, 0);
-}
+
 
 @media only screen and (min-width: 680px) {
     body {
         gap: 0;
+        background-size: cover;
     }
 
     .left {
@@ -184,15 +219,14 @@ span {
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin-top: 2rem;
     }
    
     .form-row {
         display: flex;
         padding: 0 0 0 3rem;
     }
-
-    
 
     #fisrt {
         margin-top: 0;
@@ -207,12 +241,6 @@ span {
         width: 80%;
     }
 
-    #last,
-    #phone,
-    #password-second {
-       margin-left: -2rem;
-    }
-
     button {
         margin: 2rem 0 1rem 3rem;
         background-color: rgb(184, 101, 6);
@@ -221,5 +249,34 @@ span {
     p {
         margin: 0 0 3rem 3rem;
     }
+
+    footer {
+        flex-direction: row;
+    }
+
+    footer #artistPage {
+        flex: 2;
+    }
     
+    footer #myPage {
+        flex: 3;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    h1 {
+        flex: 3;
+    }
+
+    section {
+        flex: 2;
+    }
+
+    footer #artistPage {
+        flex: 3;
+    }
+    
+    footer #myPage {
+        flex: 2;
+    }
 }
