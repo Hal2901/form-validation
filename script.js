@@ -17,7 +17,8 @@ function isValid(e, regExp) {
 }
 //check if the 2 pass are same
 function isPassSame(pass, pass_confirm) {
-    if (user_password_input.className === "invalid") return;
+    // user_password_input.className = isValid(user_password_input, passRegExp);
+    // if (user_password_input.className === "invalid") return "invalid";
     return (pass !== pass_confirm) ? "invalid" : "valid";
 }
 //show error if invalid input
@@ -38,25 +39,23 @@ function showError(input, error) {
                 break;
         }
     }
-    else if (input.className === "valid") {
-        if (input.id === "user-confirm") {
-            user_password_input.className = isValid(user_password_input, passRegExp);
-        }
+    else if (input.className === "valid" && input.id === "user-confirm") {
+        user_password_input.className = isValid(user_password_input, passRegExp);
         error.textContent = "";
         return;
     }
 
-    if (input.value.length === 0) {
-        if (input.id === "phone-number") {}
-        else {
-            input.className = "invalid";
-            error.textContent = "Please fill the blank";
-        }
+    // if (input.value.length === 0) {
+    //     if (input.id === "phone-number") {}
+    //     else {
+    //         input.className = "invalid";
+    //         error.textContent = "Please fill the blank";
+    //     }
         
-        if (input.className === "valid") {
-            error.textContent = "";
-        }
-    }
+    //     if (input.className === "valid") {
+    //         error.textContent = "";
+    //     }
+    // }
 }
 //check if input is blank
 function ifBlank(input, error, blank) {
