@@ -110,6 +110,7 @@ input:focus {
 
 input.valid {
     border: none;
+    outline: 0;
     border:2px solid rgb(0, 121, 0);
 }
 
@@ -130,6 +131,7 @@ span.instruction > ul {
 }
 
 input.invalid + span.error {
+    display: block;
     text-align: center;
     font-size: 0.75rem;
     width: 75%;
